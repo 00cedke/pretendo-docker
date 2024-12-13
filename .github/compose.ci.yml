@@ -63,3 +63,6 @@ services:
   super-mario-maker:
     restart: no
     ports: !reset []
+  mario-kart-8-authentication:
+    restart: no
+    ports: !reset []

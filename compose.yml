@@ -1,4 +1,4 @@
-name: pretendo-network
+name: new-pretendo-network
 services:
   mitmproxy-pretendo:
     image: ghcr.io/matthewl246/mitmproxy-pretendo:local
@@ -483,6 +483,24 @@ services:
     env_file:
       - ./environment/pikmin-3.env
       - ./environment/pikmin-3.local.env
+
+  mario-kart-8-authentication:
+    build: ./repos/mario-kart-8-authentication
+    depends_on:
+      - account
+      - postgres
+    restart: unless-stopped
+    ports:
+      # Go delve debugger
+      - 127.0.0.1:2052:2349
+      # Authentication server
+      - 60002:60002/udp
+    networks:
+      internal:
+    dns: 172.20.0.200
+    env_file:
+      - ./environment/mario-kart-8.env
+      - ./environment/mario-kart-8.local.env
 
 volumes:
   mitmproxy-pretendo-data:

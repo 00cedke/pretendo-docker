@@ -115,6 +115,15 @@
             "debugAdapter": "legacy",
             "port": 2351,
             "host": "127.0.0.1"
-        }
+        },
+        {
+            "type": "go",
+            "request": "attach",
+            "name": "Debug mario-kart-8-authentication",
+            "mode": "remote",
+            "debugAdapter": "legacy",
+            "port": 2352,
+            "host": "127.0.0.1"
+        },
     ]
 }
